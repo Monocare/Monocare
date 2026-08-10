@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mono Safety | Gloves</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:Inter,sans-serif;
+    background:#F4F7FA;
+    color:#1F2937;
+}
+
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:20px 0;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+
+nav .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.logo img{
+    height:60px;
+}
+
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+
+.nav-links a{
+    text-decoration:none;
+    color:#1F2937;
+    font-weight:600;
+}
+
+
+.nav-links a:hover{
+    color:#0057B8;
+}
+
+
+/* HEADER */
+
+header{
+
+background:#0057B8;
+color:white;
+text-align:center;
+padding:60px 20px;
+
+}
+
+
+header h1{
+
+font-family:Poppins;
+font-size:48px;
+
+}
+
+
+/* PRODUCTS */
+
+
+.products{
+
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+padding:50px 0;
+
+}
+
+
+
+.product{
+
+display:flex;
+align-items:center;
+gap:20px;
+background:white;
+border-radius:15px;
+padding:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+
+.product img{
+
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:12px;
+flex-shrink:0;
+
+}
+
+
+
+.details{
+
+flex:1;
+
+}
+
+
+
+.details h2{
+
+font-family:Poppins;
+font-size:18px;
+margin-bottom:8px;
+
+}
+
+
+
+.details p{
+
+font-size:13px;
+color:#555;
+line-height:1.4;
+margin-bottom:10px;
+
+}
+
+
+
+.price{
+
+font-size:20px;
+font-weight:700;
+color:#0057B8;
+margin-bottom:10px;
+
+}
+
+
+
+.product button{
+
+background:#0057B8;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+font-size:14px;
+font-weight:600;
+cursor:pointer;
+
+}
+
+
+
+.product button:hover{
+
+background:#003F87;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.products{
+
+grid-template-columns:1fr;
+
+}
+
+
+.product{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+
+.product img{
+
+width:180px;
+height:180px;
+
+}
+
+
+.product button{
+
+width:100%;
+
+}
+
+
+}
+
+.product{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="container">
+
+
+<div class="logo">
+
+<img src="images/logo.png" alt="Mono Safety Logo">
+
+</div>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="cart.html">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+
+</ul>
+
+
+</div>
+
+</nav>
+
+
+
+<header>
+
+<h1>Gloves</h1>
+
+</header>
+
+
+
+<div class="container">
+
+<div class="products">
+
+
+
+<div class="product" onclick="window.location.href='asapvinyl.html'">
+
+<img src="images/gloves/asapvinyl.jpg" alt="ASAP Vinyl Powder Free Disposable Gloves">
+
+<div class="details">
+
+<h2>ASAP Vinyl Powder Free Disposable Gloves - Box of 100</h2>
+
+<p>
+Powder-free disposable gloves ideal for healthcare, food handling and industrial use.
+</p>
+
+<div class="price">
+€8.99
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="product" onclick="window.location.href='marigold.html'">
+
+<img src="images/gloves/marigold.jpg" alt="marigold">
+
+<div class="details">
+
+<h2>Marigold Kitchen Gloves PK6</h2>
+
+<p>
+Heavy-duty gloves perfect for automotive, mechanics and workshops.
+</p>
+
+<div class="price">
+€12.99
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="product" onclick="window.location.href='nitrile.html'">
+
+<img src="images/gloves/nitrile.jpg" alt="Nitrile Gloves">
+
+<div class="details">
+
+<h2>Nitrile Gloves</h2>
+
+<p>
+Extra wrist protection for laboratory and industrial environments.
+</p>
+
+<div class="price">
+€12.99
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="product" onclick="window.location.href='xtrathick.html'">
+
+<img src="images/gloves/xtrathick.jpg" alt="Extra Thick Gloves">
+
+<div class="details">
+
+<h2>X-Tra Thick T-Grip Nitrile Gloves</h2>
+
+<p>
+Heavy-duty disposable gloves with improved puncture resistance.
+</p>
+
+<div class="price">
+€14.99
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<script src="js/scriptt.js"></script>
+
+
+</body>
+
+</html>

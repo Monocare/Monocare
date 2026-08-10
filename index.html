@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mono Safety | PPE & Workplace Safety Supplies</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Inter,sans-serif;
+background:#F4F7FA;
+color:#1F2937;
+line-height:1.6;
+}
+
+.container{
+width:min(1200px,90%);
+margin:auto;
+}
+
+nav{
+background:#fff;
+padding:20px 0;
+position:sticky;
+top:0;
+z-index:100;
+box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+
+nav .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+    height:90px;
+    display:flex;
+    align-items:center;
+}
+
+.logo img{
+    height:80px;
+    width:auto;
+    display:block;
+    object-fit:contain;
+}
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#1F2937;
+font-weight:600;
+transition:.3s;
+}
+
+nav a:hover{
+color:#0057B8;
+}
+
+.hero{
+padding:120px 0;
+background:
+linear-gradient(rgba(0,87,184,.0),rgba(0,87,184,.0)),
+url("images/hero.jpg");
+background-size:cover;
+background-position:center;
+color:white;
+}
+.hero{
+    padding:500px 0 120px;
+}
+
+.hero-content{
+max-width:650px;
+}
+
+.hero h1{
+font-family:Poppins;
+font-size:58px;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:35px;
+opacity:.95;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 34px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.primary{
+background:white;
+color:#0057B8;
+}
+
+.primary:hover{
+background:#F4F7FA;
+}
+
+.secondary{
+border:2px solid white;
+color:white;
+}
+
+.secondary:hover{
+background:white;
+color:#0057B8;
+}
+
+section{
+padding:90px 0;
+}
+
+.title{
+text-align:center;
+font-family:Poppins;
+font-size:40px;
+margin-bottom:15px;
+color:#0057B8;
+}
+
+.subtitle{
+text-align:center;
+max-width:700px;
+margin:auto;
+margin-bottom:60px;
+color:#666;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:16px;
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.icon{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.card h3{
+font-family:Poppins;
+margin-bottom:15px;
+color:#0057B8;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.feature{
+background:white;
+padding:35px;
+text-align:center;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,.05);
+}
+
+.feature span{
+font-size:50px;
+display:block;
+margin-bottom:20px;
+}
+
+.cta{
+background:#0057B8;
+color:white;
+text-align:center;
+padding:100px 0;
+}
+
+.cta h2{
+font-size:42px;
+font-family:Poppins;
+margin-bottom:20px;
+}
+
+.cta p{
+max-width:650px;
+margin:auto;
+margin-bottom:40px;
+font-size:18px;
+}
+
+footer{
+background:#1F2937;
+color:white;
+padding:60px 0;
+}
+
+.footer{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+footer h3{
+margin-bottom:20px;
+font-family:Poppins;
+}
+
+footer ul{
+list-style:none;
+}
+
+footer li{
+margin-bottom:10px;
+}
+
+footer a{
+text-decoration:none;
+color:#ddd;
+}
+
+footer a:hover{
+color:white;
+}
+
+@media(max-width:768px){
+
+nav ul{
+display:none;
+}
+
+.hero{
+padding:80px 0;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.buttons{
+flex-direction:column;
+}
+
+.btn{
+text-align:center;
+}
+
+.title{
+font-size:32px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+
+<div class="container">
+
+
+<div class="logo">
+    <img src="images/logo.png" alt="Mono Safety Logo">
+</div>
+
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+
+<li>
+
+<a href="cart.html" class="cart-link">
+
+🛒 Cart (<span id="cart-count">0</span>)
+
+</a>
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+</nav>
+
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<div class="buttons">
+
+<a href="contact.html" class="btn primary">Request a Quote</a>
+
+<a href="Products.html" class="btn secondary">Browse Products</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="title">Products We Supply</h2>
+
+<p class="subtitle">
+Everything you need to keep your workplace safe, hygienic and compliant.
+</p>
+
+<div class="grid">
+
+<div class="card">
+
+<div class="icon">🧤</div>
+
+<h3>Disposable Gloves</h3>
+
+<p>
+Premium nitrile, latex and vinyl gloves suitable for healthcare, food production, industrial work and general use.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">🧼</div>
+
+<h3>Soap & Hygiene</h3>
+
+<p>
+Hand soaps, sanitiser, dispensers and washroom products to maintain excellent hygiene standards.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">😷</div>
+
+<h3>Face Protection</h3>
+
+<p>
+Disposable masks, respirators, face shields and protective eyewear for safer workplaces.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">🦺</div>
+
+<h3>PPE Equipment</h3>
+
+<p>
+High visibility clothing, safety helmets, protective clothing and workplace safety essentials.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">🧹</div>
+
+<h3>Cleaning Supplies</h3>
+
+<p>
+Professional cleaning chemicals, wipes, disinfectants and janitorial products.
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="icon">📦</div>
+
+<h3>Workplace Essentials</h3>
+
+<p>
+Paper towels, bin liners, first aid products and daily consumables for every business.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="title">Why Choose Mono Safety?</h2>
+
+<p class="subtitle">
+Reliable products backed by exceptional service and fast delivery.
+</p>
+
+<div class="features">
+
+<div class="feature">
+
+<span>✔️</span>
+
+<h3>Quality Products</h3>
+
+<p>Trusted PPE and hygiene brands built for reliability.</p>
+
+</div>
+
+<div class="feature">
+
+<span>🚚</span>
+
+<h3>Fast Delivery</h3>
+
+<p>Quick delivery throughout Ireland.</p>
+
+</div>
+
+<div class="feature">
+
+<span>💶</span>
+
+<h3>Competitive Pricing</h3>
+
+<p>Affordable solutions for businesses of every size.</p>
+
+</div>
+
+<div class="feature">
+
+<span>🤝</span>
+
+<h3>Customer Support</h3>
+
+<p>Friendly advice and dependable service whenever you need it.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="title">Industries We Supply</h2>
+
+<p class="subtitle">
+Supporting businesses across Ireland with trusted workplace safety solutions.
+</p>
+
+<div class="grid">
+
+<div class="card"><h3>🏥 Healthcare</h3></div>
+
+<div class="card"><h3>🏗 Construction</h3></div>
+
+<div class="card"><h3>🏭 Manufacturing</h3></div>
+
+<div class="card"><h3>🍽 Food Production</h3></div>
+
+<div class="card"><h3>🏢 Commercial Offices</h3></div>
+
+<div class="card"><h3>🚚 Warehousing & Logistics</h3></div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Need PPE for Your Business?</h2>
+
+<p>
+Whether you're ordering for a small business or a large organisation, Mono Safety provides dependable PPE and hygiene supplies with competitive pricing and fast nationwide delivery.
+</p>
+
+<div class="buttons" style="justify-content:center;">
+
+<a href="contact.html" class="btn primary">Request a Quote</a>
+
+<a href="contact.html" class="btn secondary">Contact Us</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<h3>Mono Safety</h3>
+
+<p>
+Your trusted supplier of PPE, workplace safety equipment and hygiene products across Ireland.
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="Products.html">Products</a></li>
+
+<li><a href="About.html">About</a></li>
+
+<li><a href="Contact.html">Contact</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>Contact</h3>
+
+<p>Ireland</p>
+
+<p>monocare50@gmail.com</p>
+
+<p>+353 086 4161815</p>
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>

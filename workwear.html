@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mono Safety | Gloves</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:Inter,sans-serif;
+    background:#F4F7FA;
+    color:#1F2937;
+}
+
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:20px 0;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+
+nav .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.logo img{
+    height:60px;
+}
+
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+
+.nav-links a{
+    text-decoration:none;
+    color:#1F2937;
+    font-weight:600;
+}
+
+
+.nav-links a:hover{
+    color:#0057B8;
+}
+
+
+/* HEADER */
+
+header{
+
+background:#0057B8;
+color:white;
+text-align:center;
+padding:60px 20px;
+
+}
+
+
+header h1{
+
+font-family:Poppins;
+font-size:48px;
+
+}
+
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    padding:50px 0;
+}
+
+.product{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    background:white;
+    border-radius:15px;
+    padding:18px;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+    width:100%;
+    min-width:0;
+}
+
+
+
+.product img{
+
+width:150px;
+height:150px;
+object-fit:cover;
+border-radius:12px;
+flex-shrink:0;
+
+}
+
+
+
+.details{
+
+flex:1;
+
+}
+
+
+
+.details h2{
+
+font-family:Poppins;
+font-size:18px;
+margin-bottom:8px;
+
+}
+
+
+
+.details p{
+
+font-size:13px;
+color:#555;
+line-height:1.4;
+margin-bottom:10px;
+
+}
+
+
+
+.price{
+
+font-size:20px;
+font-weight:700;
+color:#0057B8;
+margin-bottom:10px;
+
+}
+
+
+
+.product button{
+
+background:#0057B8;
+color:white;
+border:none;
+padding:10px 18px;
+border-radius:8px;
+font-size:14px;
+font-weight:600;
+cursor:pointer;
+
+}
+
+
+
+.product button:hover{
+
+background:#003F87;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.products{
+
+grid-template-columns:1fr;
+
+}
+
+
+.product{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+
+.product img{
+
+width:180px;
+height:180px;
+
+}
+
+
+.product button{
+
+width:100%;
+
+}
+
+
+}
+
+.product{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+}
+
+.cart-action{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-top:12px;
+}
+
+.cart-action button{
+    background:#0057B8;
+    color:white;
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:13px;
+    cursor:pointer;
+}
+
+.quantity-box{
+    width:45px;
+    height:30px;
+    padding:0;
+    text-align:center;
+    font-size:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="container">
+
+
+<div class="logo">
+
+<img src="images/logo.png" alt="Mono Safety Logo">
+
+</div>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="cart.html">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+
+</ul>
+
+
+</div>
+
+</nav>
+
+
+
+<header>
+
+<b><h1>Workwear</h1></b>
+
+</header>
+
+
+
+<div class="container">
+
+    <div class="products">
+
+        <!-- Product 1 -->
+        <div class="product" onclick="window.location.href='surgicalmasks.html'">
+
+            <img src="images/workwear/smasks.jpg" alt="masks">
+
+            <div class="details">
+
+                <h2>Surgical Type IIR Face Mask-3PLY PK50</h2>
+
+                <p>EN14683 Certified<br>Bacterial filtration efficiency of 98%</p>
+
+                <div class="price">€6.99</div>
+
+                <div class="cart-action">
+
+                    <button onclick="event.stopPropagation(); addProduct('Imperial Leather Soap 4pk PK8 (Original)',6.99,'images/hygiene/imperial.jpg','qty1');">
+                        Add To Cart
+                    </button>
+
+                    <input id="qty1" class="quantity-box" type="number" value="1" min="1" onclick="event.stopPropagation();">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product" onclick="window.location.href='gentlecare.html'">
+
+            <img src="images/hygiene/gentlecare.jpg" alt="Imperial Gentle Care">
+
+            <div class="details">
+
+                <h2>Imperial Leather Soap 4pk PK8 (Gentle Care)</h2>
+
+                <p>Gentle cleansing soap enriched for sensitive skin.</p>
+
+                <div class="price">€6.99</div>
+
+                <div class="cart-action">
+
+                    <button onclick="event.stopPropagation(); addProduct('Imperial Leather Soap 4pk PK8 (Gentle Care)',6.99,'images/hygiene/gentlecare.jpg','qty2');">
+                        Add To Cart
+                    </button>
+
+                    <input id="qty2" class="quantity-box" type="number" value="1" min="1" onclick="event.stopPropagation();">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product" onclick="window.location.href='dove1.html'">
+
+            <img src="images/hygiene/DoveNourishing.jpg" alt="DoveSoap">
+
+            <div class="details">
+
+                <h2>Dove Hand Wash 250ml PK6 (Deeply Nourishing)</h2>
+
+                <p>Deeply nourishing hand wash with a moisturising formula that leaves hands soft, smooth and refreshed after every wash.</p>
+
+                <div class="price">€3.99</div>
+
+                <div class="cart-action">
+
+                    <button onclick="event.stopPropagation(); addProduct('Dove Hand Wash 250ml PK6 (Deeply Nourishing)',3.99,'images/hygiene//DoveNourishing.jpg','qty3');">
+                        Add To Cart
+                    </button>
+
+                    <input id="qty3" class="quantity-box" type="number" value="1" min="1" onclick="event.stopPropagation();">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product" onclick="window.location.href='palmolive.html'">
+
+            <img src="images/hygiene/palmolive.jpg" alt="palmolive">
+
+            <div class="details">
+
+                <h2>Palmolive Soap Moisture Care 4pk PK18</h2>
+
+                <p>Moisturising Palmolive soap bars with a rich creamy lather, helping to cleanse and care for your skin every day.</p>
+
+                <div class="price">€14.99</div>
+
+                <div class="cart-action">
+
+                    <button onclick="event.stopPropagation(); addProduct('Palmolive Soap Moisture Care 4pk PK18',14.99,'images/hygiene/palmolive.jpg','qty4');">
+                        Add To Cart
+                    </button>
+
+                    <input id="qty4" class="quantity-box" type="number" value="1" min="1" onclick="event.stopPropagation();">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="js/scriptt.js"></script>
+
+
+</body>
+
+</html>

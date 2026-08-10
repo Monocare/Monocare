@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mono Safety | Product</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+font-family:Inter,sans-serif;
+background:#F4F7FA;
+color:#1F2937;
+
+}
+
+
+.container{
+
+width:min(1200px,90%);
+margin:auto;
+
+}
+
+
+
+/* NAVBAR */
+
+
+nav{
+
+background:white;
+padding:20px 0;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+}
+
+
+nav .container{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+
+.logo img{
+
+height:60px;
+
+}
+
+
+.nav-links{
+
+display:flex;
+gap:30px;
+list-style:none;
+
+}
+
+
+.nav-links a{
+
+text-decoration:none;
+color:#1F2937;
+font-weight:600;
+
+}
+
+
+.nav-links a:hover{
+
+color:#0057B8;
+
+}
+
+
+
+/* PRODUCT */
+
+
+.product-page{
+
+display:flex;
+gap:60px;
+padding:80px 0;
+align-items:center;
+
+}
+
+
+.product-image{
+
+width:50%;
+
+}
+
+
+.product-image img{
+
+width:100%;
+max-width:500px;
+height:500px;
+object-fit:cover;
+border-radius:20px;
+background:white;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+}
+
+
+
+.product-info{
+
+width:50%;
+
+}
+
+
+.product-info h1{
+
+font-family:Poppins;
+font-size:42px;
+margin-bottom:20px;
+
+}
+
+
+.description{
+
+font-size:18px;
+color:#555;
+line-height:1.6;
+margin-bottom:25px;
+
+}
+
+
+.price{
+
+font-size:32px;
+font-weight:700;
+color:#0057B8;
+margin-bottom:25px;
+
+}
+
+
+
+.quantity{
+
+width:80px;
+padding:12px;
+font-size:16px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:8px;
+
+}
+
+
+
+button{
+
+display:block;
+background:#0057B8;
+color:white;
+border:none;
+padding:15px 40px;
+border-radius:10px;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+
+}
+
+
+button:hover{
+
+background:#003F87;
+
+}
+
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.product-page{
+
+flex-direction:column;
+
+}
+
+
+.product-image,
+.product-info{
+
+width:100%;
+
+}
+
+
+.product-image img{
+
+height:350px;
+
+}
+
+
+.product-info h1{
+
+font-size:32px;
+
+}
+
+
+}
+
+.sizes{
+    margin-bottom:20px;
+}
+
+
+.sizes h3{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+
+.size-buttons{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+
+.size-btn{
+
+    background:white;
+    color:#0057B8;
+    border:2px solid #0057B8;
+    padding:8px 12px;
+    border-radius:8px;
+    font-size:14px;
+    cursor:pointer;
+
+}
+
+
+.size-btn:hover,
+.size-btn.selected{
+
+    background:#0057B8;
+    color:white;
+
+}
+
+
+.quantity{
+
+    width:80px;
+    padding:12px;
+    font-size:16px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    margin-bottom:20px;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<nav>
+
+<div class="container">
+
+
+<div class="logo">
+
+<img src="images/logo.png" alt="Mono Safety Logo">
+
+</div>
+
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="cart.html">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+
+</ul>
+
+
+</div>
+
+</nav>
+
+
+
+
+<div class="container">
+
+
+<div class="product-page">
+
+
+
+<div class="product-image">
+
+<img src="images/papergoods/toiletroll.jpg">
+
+</div>
+
+
+
+
+<div class="product-info">
+
+
+<h1>
+320 Gold Toilet Roll 48 Rolls Per Pack 100% Pure Cellulose
+</h1>
+
+
+
+<p class="description">
+
+<br>
+
+</p>
+
+
+
+<div class="price">
+€14.99
+</div>
+
+
+<input class="quantity" id="quantity" type="number" value="1" min="1">
+
+
+<button onclick="addProductToCart()">
+    Add To Cart
+</button>
+
+<script src="js/scriptt.js"></script>
+
+<script>
+function addProductToCart(){
+
+    let quantity = Number(document.getElementById("quantity").value);
+
+    for(let i = 0; i < quantity; i++){
+
+        addToCart(
+            "320 Gold Toilet Roll 48 Rolls Per Pack 100% Pure Cellulose",
+            14.99,
+            "images/papergoods/toiletroll.jpg"
+        );
+
+    }
+
+}
+</script>
+
+
+</body>
+
+</html>

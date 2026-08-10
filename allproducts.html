@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mono Safety | All Products</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    font-family:Inter,sans-serif;
+    background:#F4F7FA;
+    color:#1F2937;
+}
+
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:20px 0;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
+}
+
+
+nav .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+
+.logo img{
+    height:60px;
+}
+
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+
+.nav-links a{
+    text-decoration:none;
+    color:#1F2937;
+    font-weight:600;
+}
+
+
+.nav-links a:hover{
+    color:#0057B8;
+}
+
+
+/* HEADER */
+
+header{
+
+background:#0057B8;
+color:white;
+text-align:center;
+padding:60px 20px;
+
+}
+
+
+header h1{
+
+font-family:Poppins;
+font-size:48px;
+
+}
+
+
+/* PRODUCTS */
+
+.products {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 120px auto 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    column-gap: 30px;
+    row-gap: 40px;
+
+    align-items: stretch;
+}
+
+
+
+.product {
+
+    width:100%;
+
+    min-width:0;
+
+    height:auto;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#ffffff;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+    transition:transform .3s ease,
+               box-shadow .3s ease;
+
+}
+
+
+
+.product:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+
+}
+
+
+
+.product img {
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+.product .details {
+
+    padding:22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+
+
+.product h2 {
+
+    font-size:20px;
+
+    line-height:1.35;
+
+    margin:0 0 12px 0;
+
+}
+
+
+
+.product p {
+
+    font-size:15px;
+
+    line-height:1.5;
+
+    color:#666;
+
+    margin:0 0 20px 0;
+
+}
+
+
+
+.product .price {
+
+    margin-top:auto;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#0057B8;
+
+}/* TABLET */
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .product img{
+        height:220px;
+    }
+
+}
+
+
+/* MOBILE */
+
+
+@media(max-width:900px){
+
+
+.products{
+
+grid-template-columns:1fr;
+
+}
+
+
+.product{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+
+.product img{
+
+width:180px;
+height:180px;
+
+}
+
+
+.product button{
+
+width:100%;
+
+}
+
+
+}
+
+.product{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+}
+
+.quantity-box{
+    width:45px;
+    height:30px;
+    padding:0;
+    text-align:center;
+    font-size:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<div class="container">
+
+
+<div class="logo">
+
+<img src="images/logo.png" alt="Mono Safety Logo">
+
+</div>
+
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="products.html">Products</a></li>
+
+<li><a href="about.html">About</a></li>
+
+<li><a href="contact.html">Contact</a></li>
+
+<li>
+<a href="cart.html">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+
+</ul>
+
+
+</div>
+
+</nav>
+
+
+
+<header>
+
+<h1>All Products</h1>
+
+</header>
+
+<div class="container">
+
+<div class="products">
+
+        <!-- Product 1 -->
+        <div class="product" onclick="window.location.href='imperial-original.html'">
+
+            <img src="images/hygiene/imperial.jpg" alt="Imperial Original">
+
+            <div class="details">
+
+                <h2>Imperial Leather Soap 4pk PK8 (Original)</h2>
+
+                <p></p>
+
+                <div class="price">€6.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product" onclick="window.location.href='gentlecare.html'">
+
+            <img src="images/hygiene/gentlecare.jpg" alt="Imperial Gentle Care">
+
+            <div class="details">
+
+                <h2>Imperial Leather Soap 4pk PK8 (Gentle Care)</h2>
+
+                <p></p>
+
+                <div class="price">€6.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product" onclick="window.location.href='dove1.html'">
+
+            <img src="images/hygiene/DoveNourishing.jpg" alt="DoveSoap">
+
+            <div class="details">
+
+                <h2>Dove Hand Wash 250ml PK6 (Deeply Nourishing)</h2>
+
+                <p></p>
+
+                <div class="price">€3.99</div>
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product" onclick="window.location.href='palmolive.html'">
+
+            <img src="images/hygiene/palmolive.jpg" alt="palmolive">
+
+            <div class="details">
+
+                <h2>Palmolive Soap Moisture Care 4pk PK18</h2>
+
+                <p></p>
+
+                <div class="price">€14.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product" onclick="window.location.href='blueroll.html'">
+
+            <img src="images/papergoods/blueroll6.jpg" alt="Imperial Gentle Care">
+
+            <div class="details">
+
+                <h2>Paper Blue Roll 2PLY 6 Rolls Per Pack</h2>
+
+                <p></p>
+
+                <div class="price">€11.50</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product" onclick="window.location.href='centerfeed.html'">
+
+            <img src="images/papergoods/centerfeed.jpg" alt="centerfeed">
+
+            <div class="details">
+
+                <h2>White Centrefeed Rolls 2PLY 6 Rolls Per Pack</h2>
+
+                <p></p>
+
+                <div class="price">€11.50</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product" onclick="window.location.href='zfold.html'">
+
+            <img src="images/papergoods/zfold.jpg" alt="zfold">
+
+            <div class="details">
+
+                <h2>Z FOLD HAND TOWELS - WHITE 2400 FILL</h2>
+
+                <p></p>
+
+                <div class="price">€22.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product" onclick="window.location.href='toiletroll.html'">
+
+            <img src="images/papergoods/toiletroll.jpg" alt="Imperial Gentle Care">
+
+            <div class="details">
+
+                <h2>320 Gold Toilet Roll 48 Rolls Per Pack 100% Pure Cellulose</h2>
+
+                <p></p>
+
+                <div class="price">€14.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 9 -->
+        <div class="product" onclick="window.location.href='asapvinyl.html'">
+
+            <img src="images/gloves/asapvinyl.jpg" alt="Imperial Gentle Care">
+
+            <div class="details">
+
+                <h2>ASAP Vinyl Powder Free Disposable Gloves - Box of 100</h2>
+
+                <p></p>
+
+                <div class="price">€8.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 10 -->
+        <div class="product" onclick="window.location.href='marigold.html'">
+
+            <img src="images/gloves/marigold.jpg" alt="centerfeed">
+
+            <div class="details">
+
+                <h2>Marigold Kitchen Gloves PK6</h2>
+
+                <p></p>
+
+                <div class="price">€12.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 11 -->
+        <div class="product" onclick="window.location.href='nitrile.html'">
+
+            <img src="images/gloves/nitrile.jpg" alt="zfold">
+
+            <div class="details">
+
+                <h2>Nitrile Gloves</h2>
+
+                <p></p>
+
+                <div class="price">€12.99</div>
+
+
+
+            </div>
+
+        </div>
+
+        <!-- Product 12 -->
+        <div class="product" onclick="window.location.href='xtrathick.html'">
+
+            <img src="images/gloves/xtrathick.jpg" alt="Imperial Gentle Care">
+
+            <div class="details">
+
+                <h2>X-Tra Thick T-Grip Nitrile Gloves</h2>
+
+                <p></p>
+
+                <div class="price">€14.99</div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="js/scriptt.js"></script>
+
+
+</body>
+
+</html>
