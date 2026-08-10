@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mono Safety | PPE & Workplace Safety Supplies</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    background:#F4F7FA;
+    color:#1F2937;
+    line-height:1.6;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    background:white;
+    padding:20px 0;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
+}
+
+nav .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo img{
+    height:60px;
+    width:auto;
+}
+
+.nav-links{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    align-items:center;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#1F2937;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#0057B8;
+}
+
+.cart-link{
+    color:#0057B8!important;
+}
+
+/* HERO */
+
+.hero{
+    padding:120px 0;
+    background:
+    linear-gradient(
+    rgba(0,87,184,.88),
+    rgba(0,87,184,.88)
+    ),
+    url("https://images.unsplash.com/photo-1585435557343-3b092031d4f7?auto=format&fit=crop&w=1600&q=80");
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero h1{
+    font-family:Poppins;
+    font-size:58px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+/* SECTION */
+
+section{
+    padding:90px 0;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+.product-link{
+    text-decoration:none;
+    color:#1F2937;
+    display:block;
+}
+
+.product{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    text-align:center;
+    transition:.3s;
+}
+
+.product-link:hover .product{
+    transform:translateY(-8px);
+}
+
+.product img{
+    width:80%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    margin:20px auto 10px;
+    display:block;
+}
+
+.product h3{
+    font-family:Poppins;
+    color:#1F2937;
+    margin-top:15px;
+    font-size:22px;
+}
+
+/* FEATURES */
+
+.title{
+    text-align:center;
+    font-family:Poppins;
+    font-size:40px;
+    color:#0057B8;
+    margin-bottom:50px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.feature{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+}
+
+.feature span{
+    font-size:40px;
+}
+
+/* CTA */
+
+.cta{
+    background:#0057B8;
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    font-family:Poppins;
+    font-size:40px;
+}
+
+.cta p{
+    margin:25px auto;
+    max-width:700px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.primary{
+    background:white;
+    color:#0057B8;
+}
+
+/* FOOTER */
+
+footer{
+    background:#1F2937;
+    color:white;
+    padding:60px 0;
+}
+
+.footer{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer a{
+    color:#ddd;
+    text-decoration:none;
+}
+
+/* MOBILE */
+
+@media(max-width:1000px){
+
+.products{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.features{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:700px){
+
+.nav-links{
+    display:none;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.products,
+.features{
+    grid-template-columns:1fr;
+}
+
+}
+
+.view-all-section{
+    padding:20px 0 70px;
+}
+
+.view-all-box{
+    max-width:600px;
+    margin:0 auto;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.view-all-box h2{
+    font-family:Poppins;
+    font-size:32px;
+    margin-bottom:15px;
+    color:#1F2937;
+}
+
+.view-all-box p{
+    color:#555;
+    font-size:17px;
+    margin-bottom:30px;
+}
+
+.view-all-btn{
+    display:inline-block;
+    background:#0057B8;
+    color:white;
+    text-decoration:none;
+    padding:15px 40px;
+    border-radius:10px;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.view-all-btn:hover{
+    background:#003F87;
+    transform:translateY(-3px);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="container">
+
+<div class="logo">
+<img src="images/logo.png" alt="Mono Safety Logo">
+</div>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li>
+<a href="cart.html" class="cart-link">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+</ul>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="container hero-content">
+<h1>Featured Products</h1>
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="products">
+
+<a href="gloves.html" class="product-link">
+<div class="product">
+<img src="images/gloves/blacknitrile.jpg" alt="Gloves">
+<h3>Gloves</h3>
+</div>
+</a>
+
+<a href="hygiene.html" class="product-link">
+<div class="product">
+<img src="images/hygiene/imperial.jpg" alt="Hygiene">
+<h3>Hygiene Products</h3>
+</div>
+</a>
+
+<a href="papergoods.html" class="product-link">
+<div class="product">
+<img src="images/papergoods/blueroll.jpg" alt="paper">
+<h3>Paper Goods</h3>
+</div>
+</a>
+
+<a href="allproducts.html" class="product-link">
+<div class="product">
+<img src="images/logo.png" alt="hi-vis">
+<h3>All Products</h3>
+</div>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="view-all-section">
+
+    <div class="container">
+
+        <div class="view-all-box">
+
+            <h2>Browse Our Full Range</h2>
+
+            <p>
+                Discover our complete selection of safety, hygiene and workwear products.
+            </p>
+
+            <a href="allproducts.html" class="view-all-btn">
+                View All Products
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2 class="title">Why Choose Mono Safety?</h2>
+
+<div class="features">
+
+<div class="feature">
+<span>✔</span>
+<h3>Quality PPE</h3>
+<p>Reliable products for every workplace.</p>
+</div>
+
+<div class="feature">
+<span>🚚</span>
+<h3>Fast Delivery</h3>
+<p>Quick supply throughout Ireland.</p>
+</div>
+
+<div class="feature">
+<span>💶</span>
+<h3>Great Prices</h3>
+<p>Competitive business pricing.</p>
+</div>
+
+<div class="feature">
+<span>🤝</span>
+<h3>Support</h3>
+<p>Friendly customer service.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="container">
+
+<h2>Need PPE For Your Business?</h2>
+
+<p>Contact Mono Safety today for reliable PPE and workplace supplies.</p>
+
+<a href="contact.html" class="btn primary">Contact Us</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container footer">
+
+<div>
+<h3>Mono Safety</h3>
+<p>Your trusted PPE and workplace safety supplier.</p>
+</div>
+
+<div>
+<h3>Quick Links</h3>
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="Products.html">Products</a></li>
+
+<li><a href="About.html">About</a></li>
+
+<li><a href="Contact.html">Contact</a></li>
+
+</ul>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>Ireland</p>
+<p>monocare50@gmail.com</p>
+<p>+353 086 4161815</p>
+</div>
+
+</div>
+
+</footer>
+
+<script src="js/scriptt.js"></script>
+
+</body>
+</html>
