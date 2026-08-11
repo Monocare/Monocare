@@ -16,10 +16,6 @@
 
 <style>
 
-/* =========================
-   GLOBAL
-========================= */
-
 * {
     margin: 0;
     padding: 0;
@@ -78,7 +74,7 @@ nav .container {
 
 
 /* =========================
-   MAIN
+   CHECKOUT
 ========================= */
 
 .checkout-container {
@@ -91,22 +87,12 @@ h1 {
     color: #0057B8;
 }
 
-
-/* =========================
-   TWO COLUMNS
-========================= */
-
 .checkout-layout {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 35px;
     align-items: start;
 }
-
-
-/* =========================
-   BOXES
-========================= */
 
 .checkout-box {
     background: white;
@@ -117,7 +103,7 @@ h1 {
 
 
 /* =========================
-   PRODUCTS
+   ORDER
 ========================= */
 
 .products-title {
@@ -265,10 +251,15 @@ button {
     border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
+    transition: .2s;
 }
 
 button:hover {
     background: #003F87;
+}
+
+button:active {
+    transform: translateY(1px);
 }
 
 
@@ -281,23 +272,29 @@ button:hover {
     padding: 50px 20px;
 }
 
+.empty h2 {
+    margin-bottom: 10px;
+}
+
 .empty a {
     display: inline-block;
     margin-top: 25px;
-    padding: 14px 28px;
+    padding: 14px 30px;
     background: #0057B8;
-    color: white;
+    color: #ffffff;
     font-weight: 600;
     text-decoration: none;
     border-radius: 8px;
-    transition: 0.2s;
-    box-shadow: 0 5px 12px rgba(0, 87, 184, 0.2);
+    border: 2px solid #0057B8;
+    transition: all 0.2s ease;
+    box-shadow: 0 5px 12px rgba(0,87,184,.2);
 }
 
 .empty a:hover {
     background: #003F87;
+    border-color: #003F87;
+    color: #ffffff;
     transform: translateY(-2px);
-    box-shadow: 0 7px 16px rgba(0, 87, 184, 0.3);
 }
 
 
@@ -359,7 +356,7 @@ button:hover {
 
 <div class="container">
 
-
+```
 <div class="logo">
 
     <img
@@ -395,30 +392,31 @@ button:hover {
     </li>
 
 </ul>
-
+```
 
 </div>
 
 </nav>
 
 <!-- =========================
-     CHECKOUT
+     MAIN
 ========================= -->
 
 <div class="container checkout-container">
 
-<h1>Request an Invoice</h1>
+<h1>
+    Request an Invoice
+</h1>
 
 <div class="checkout-layout">
 
 <!-- =========================
-     LEFT SIDE
      ORDER
 ========================= -->
 
 <div class="checkout-box">
 
-
+```
 <h2 class="products-title">
     Your Order
 </h2>
@@ -429,8 +427,6 @@ button:hover {
     class="checkout-items"
 ></div>
 
-
-<!-- TOTALS -->
 
 <div class="totals">
 
@@ -478,45 +474,23 @@ button:hover {
     </div>
 
 </div>
-
+```
 
 </div>
 
 <!-- =========================
-     RIGHT SIDE
-     CUSTOMER DETAILS
+     CUSTOMER FORM
 ========================= -->
 
 <div class="checkout-box">
 
 <form
-    id="invoice-form"
-    action="https://formsubmit.co/monocare50@gmail.com"
+    action="https://formspree.io/f/xkjwrrpv"
     method="POST"
 >
 
-
-<!-- =========================
-     FORMSUBMIT SETTINGS
-========================= -->
-
-<input
-    type="hidden"
-    name="_subject"
-    value="New Mono Safety Invoice Request"
->
-
-
-<input
-    type="hidden"
-    name="_template"
-    value="table"
->
-
-
-<!-- =========================
-     CUSTOMER DETAILS
-========================= -->
+```
+<!-- CUSTOMER DETAILS -->
 
 <div class="customer-details">
 
@@ -646,13 +620,10 @@ button:hover {
      SUBMIT
 ========================= -->
 
-<button
-    type="submit"
-    id="invoice-button"
->
+<button type="submit">
     Request an Invoice
 </button>
-
+```
 
 </form>
 
@@ -688,15 +659,12 @@ const vatElement =
 const totalElement =
     document.getElementById("grand-total");
 
-const invoiceButton =
-    document.getElementById("invoice-button");
-
 
 let subtotal = 0;
 
 
 /* =========================
-   UPDATE CART COUNT
+   CART COUNT
 ========================= */
 
 function updateCartCount() {
@@ -745,9 +713,6 @@ if (cart.length === 0) {
 
     `;
 
-    invoiceButton.style.display =
-        "none";
-
 }
 
 
@@ -777,8 +742,8 @@ else {
 
 
         /*
-           This text is what will
-           appear in your invoice email.
+           Build the order information
+           that will be sent to Formspree.
         */
 
         orderDetails +=
@@ -793,7 +758,7 @@ else {
 
 
         /*
-           Display product on checkout.
+           Display product.
         */
 
         items.innerHTML += `
@@ -846,7 +811,7 @@ else {
 
 
     /* =========================
-       CALCULATE VAT
+       VAT
     ========================= */
 
     const vat =
@@ -872,7 +837,7 @@ else {
 
 
     /* =========================
-       PUT ORDER INTO FORM
+       FORM DATA
     ========================= */
 
     document.getElementById(
@@ -912,4 +877,3 @@ updateCartCount();
 </body>
 
 </html>
-
