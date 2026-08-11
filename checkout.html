@@ -439,128 +439,51 @@ Delivery fee may apply
      CUSTOMER DETAILS
 ========================= -->
 
-<div class="checkout-box">
-
 <form
-id="invoice-form"
-action="https://formsubmit.co/monocare50@gmail.com"
-method="POST"
+    action="https://formsubmit.co/monocare50@gmail.com"
+    method="POST"
 >
 
-<!-- FORMSUBMIT SETTINGS -->
-
+```
 <input
-type="hidden"
-name="_subject"
-value="New Mono Safety Invoice Request"
-
+    type="hidden"
+    name="_subject"
+    value="Mono Safety Test"
 >
 
 <input
-type="hidden"
-name="_captcha"
-value="false"
-
+    type="hidden"
+    name="_captcha"
+    value="false"
 >
 
 <input
-type="hidden"
-name="_template"
-value="table"
-
+    type="text"
+    name="name"
+    placeholder="Your name"
+    required
 >
-
-<!-- CUSTOMER DETAILS -->
-
-<div class="customer-details">
-
-<h2>
-Customer Details
-</h2>
-
-<div class="form-group">
-
-<label for="customer-name">
-Name
-</label>
 
 <input
-type="text"
-id="customer-name"
-name="Customer Name"
-placeholder="Your name"
-required
-
+    type="email"
+    name="email"
+    placeholder="Your email"
+    required
 >
-
-</div>
-
-<div class="form-group">
-
-<label for="customer-email">
-Email
-</label>
-
-<input
-type="email"
-id="customer-email"
-name="Customer Email"
-placeholder="Your email address"
-required
-
->
-
-</div>
-
-<div class="form-group">
-
-<label for="customer-phone">
-Phone
-</label>
-
-<input
-type="tel"
-id="customer-phone"
-name="Customer Phone"
-placeholder="Your phone number"
-required
-
->
-
-</div>
-
-<div class="form-group">
-
-<label for="company">
-Company
-</label>
-
-<input
-type="text"
-id="company"
-name="Company"
-placeholder="Company name (optional)"
-
->
-
-</div>
-
-<div class="form-group">
-
-<label for="address">
-Delivery / Billing Address
-</label>
 
 <textarea
-id="address"
-name="Address"
-placeholder="Enter your address"
-required
+    name="message"
+    placeholder="Test message"
+    required
 ></textarea>
 
-</div>
+<button type="submit">
+    TEST SUBMISSION
+</button>
+```
 
-</div>
+</form>
+
 
 <!-- =========================
      HIDDEN ORDER DETAILS
