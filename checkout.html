@@ -16,6 +16,10 @@
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -261,42 +265,10 @@ button {
     border-radius: 10px;
     cursor: pointer;
     font-weight: 600;
-    transition: .2s;
 }
 
 button:hover {
     background: #003F87;
-}
-
-button:disabled {
-    opacity: .7;
-    cursor: not-allowed;
-}
-
-
-/* =========================
-   STATUS MESSAGE
-========================= */
-
-#form-status {
-    display: none;
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-}
-
-#form-status.success {
-    display: block;
-    background: #E8F5E9;
-    color: #2E7D32;
-}
-
-#form-status.error {
-    display: block;
-    background: #FFEBEE;
-    color: #C62828;
 }
 
 
@@ -311,10 +283,21 @@ button:disabled {
 
 .empty a {
     display: inline-block;
-    margin-top: 20px;
-    color: #0057B8;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #0057B8;
+    color: white;
     font-weight: 600;
     text-decoration: none;
+    border-radius: 8px;
+    transition: 0.2s;
+    box-shadow: 0 5px 12px rgba(0, 87, 184, 0.2);
+}
+
+.empty a:hover {
+    background: #003F87;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 87, 184, 0.3);
 }
 
 
@@ -430,6 +413,7 @@ button:disabled {
 
 <!-- =========================
      LEFT SIDE
+     ORDER
 ========================= -->
 
 <div class="checkout-box">
@@ -445,6 +429,8 @@ button:disabled {
     class="checkout-items"
 ></div>
 
+
+<!-- TOTALS -->
 
 <div class="totals">
 
@@ -498,37 +484,174 @@ button:disabled {
 
 <!-- =========================
      RIGHT SIDE
+     CUSTOMER DETAILS
 ========================= -->
 
 <div class="checkout-box">
 
-<form id="invoice-form">
+<form
+    id="invoice-form"
+    action="https://formsubmit.co/monocare50@gmail.com"
+    method="POST"
+>
 
-<form action="https://formsubmit.co/monocare50@gmail.com" method="POST">
 
-    <input type="hidden" name="_subject" value="Mono Safety TEST">
+<!-- =========================
+     FORMSUBMIT SETTINGS
+========================= -->
 
-    <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        required
-    >
+<input
+    type="hidden"
+    name="_subject"
+    value="New Mono Safety Invoice Request"
+>
 
-    <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        required
-    >
 
-    <button type="submit">
-        SEND TEST
-    </button>
+<input
+    type="hidden"
+    name="_template"
+    value="table"
+>
 
-</form>
 
-<div id="form-status"></div>
+<!-- =========================
+     CUSTOMER DETAILS
+========================= -->
+
+<div class="customer-details">
+
+    <h2>
+        Customer Details
+    </h2>
+
+
+    <div class="form-group">
+
+        <label for="customer-name">
+            Name
+        </label>
+
+        <input
+            type="text"
+            id="customer-name"
+            name="Customer Name"
+            placeholder="Your name"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="customer-email">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="customer-email"
+            name="email"
+            placeholder="Your email address"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="customer-phone">
+            Phone
+        </label>
+
+        <input
+            type="tel"
+            id="customer-phone"
+            name="Customer Phone"
+            placeholder="Your phone number"
+            required
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="company">
+            Company
+        </label>
+
+        <input
+            type="text"
+            id="company"
+            name="Company"
+            placeholder="Company name (optional)"
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="address">
+            Delivery / Billing Address
+        </label>
+
+        <textarea
+            id="address"
+            name="Address"
+            placeholder="Enter your address"
+            required
+        ></textarea>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ORDER INFORMATION
+========================= -->
+
+<input
+    type="hidden"
+    id="order-details"
+    name="Order Details"
+>
+
+
+<input
+    type="hidden"
+    id="order-subtotal"
+    name="Subtotal"
+>
+
+
+<input
+    type="hidden"
+    id="order-vat"
+    name="VAT 23%"
+>
+
+
+<input
+    type="hidden"
+    id="order-total"
+    name="Total"
+>
+
+
+<!-- =========================
+     SUBMIT
+========================= -->
+
+<button
+    type="submit"
+    id="invoice-button"
+>
+    Request an Invoice
+</button>
 
 
 </form>
@@ -549,6 +672,10 @@ let cart =
     JSON.parse(localStorage.getItem("cart")) || [];
 
 
+/* =========================
+   ELEMENTS
+========================= */
+
 const items =
     document.getElementById("checkout-items");
 
@@ -561,21 +688,15 @@ const vatElement =
 const totalElement =
     document.getElementById("grand-total");
 
-const invoiceForm =
-    document.getElementById("invoice-form");
-
 const invoiceButton =
     document.getElementById("invoice-button");
-
-const statusMessage =
-    document.getElementById("form-status");
 
 
 let subtotal = 0;
 
 
 /* =========================
-   CART COUNT
+   UPDATE CART COUNT
 ========================= */
 
 function updateCartCount() {
@@ -583,17 +704,21 @@ function updateCartCount() {
     const counter =
         document.getElementById("cart-count");
 
-    if (!counter) return;
+    if (!counter) {
+        return;
+    }
 
     let totalItems = 0;
 
     cart.forEach(item => {
 
-        totalItems += Number(item.qty) || 0;
+        totalItems +=
+            Number(item.qty) || 0;
 
     });
 
-    counter.textContent = totalItems;
+    counter.textContent =
+        totalItems;
 
 }
 
@@ -620,7 +745,8 @@ if (cart.length === 0) {
 
     `;
 
-    invoiceButton.style.display = "none";
+    invoiceButton.style.display =
+        "none";
 
 }
 
@@ -646,8 +772,14 @@ else {
             price * quantity;
 
 
-        subtotal += lineTotal;
+        subtotal +=
+            lineTotal;
 
+
+        /*
+           This text is what will
+           appear in your invoice email.
+        */
 
         orderDetails +=
             item.name +
@@ -659,6 +791,10 @@ else {
             lineTotal.toFixed(2) +
             "\n";
 
+
+        /*
+           Display product on checkout.
+        */
 
         items.innerHTML += `
 
@@ -684,7 +820,8 @@ else {
 
                             <br>
 
-                            €${price.toFixed(2)} each
+                            €${price.toFixed(2)}
+                            each
 
                         </div>
 
@@ -709,11 +846,12 @@ else {
 
 
     /* =========================
-       VAT
+       CALCULATE VAT
     ========================= */
 
     const vat =
         subtotal * 0.23;
+
 
     const grandTotal =
         subtotal + vat;
@@ -734,12 +872,13 @@ else {
 
 
     /* =========================
-       HIDDEN FORM DATA
+       PUT ORDER INTO FORM
     ========================= */
 
     document.getElementById(
         "order-details"
-    ).value = orderDetails;
+    ).value =
+        orderDetails;
 
 
     document.getElementById(
@@ -763,172 +902,6 @@ else {
 
 
 /* =========================
-   FORM SUBMISSION
-========================= */
-
-invoiceForm.addEventListener(
-    "submit",
-    async function(event) {
-
-        event.preventDefault();
-
-
-        /* Clear previous status */
-
-        statusMessage.className = "";
-        statusMessage.textContent = "";
-
-
-        /* Disable button */
-
-        invoiceButton.disabled = true;
-
-        invoiceButton.textContent =
-            "Sending Invoice Request...";
-
-
-        /*
-           Convert the form into an object
-           that FormSubmit can receive.
-        */
-
-        const formData =
-            new FormData(invoiceForm);
-
-
-        const data = {};
-
-
-        formData.forEach(
-            (value, key) => {
-
-                data[key] = value;
-
-            }
-        );
-
-
-        try {
-
-            /*
-               FormSubmit AJAX endpoint
-            */
-
-            const response =
-                await fetch(
-                    "https://formsubmit.co/ajax/monocare50@gmail.com",
-                    {
-                        method: "POST",
-
-                        headers: {
-                            "Content-Type":
-                                "application/json",
-
-                            "Accept":
-                                "application/json"
-                        },
-
-                        body:
-                            JSON.stringify(data)
-                    }
-                );
-
-
-            const result =
-                await response.json();
-
-
-            console.log(
-                "FormSubmit response:",
-                result
-            );
-
-
-            /*
-               SUCCESS
-            */
-
-            if (
-                response.ok &&
-                result.success !== false
-            ) {
-
-                statusMessage.className =
-                    "success";
-
-                statusMessage.textContent =
-                    "✓ Invoice request sent successfully!";
-
-
-                /*
-                   Clear cart only after
-                   FormSubmit accepts it.
-                */
-
-                localStorage.removeItem("cart");
-
-
-                /*
-                   Update cart number
-                */
-
-                updateCartCount();
-
-
-                /*
-                   Keep the success message
-                   visible for the customer.
-                */
-
-                invoiceButton.textContent =
-                    "Request Sent";
-
-            }
-
-
-            /*
-               FORM SUBMIT ERROR
-            */
-
-            else {
-
-                throw new Error(
-                    result.message ||
-                    "FormSubmit rejected the request."
-                );
-
-            }
-
-        }
-
-        catch (error) {
-
-            console.error(
-                "Invoice submission error:",
-                error
-            );
-
-
-            statusMessage.className =
-                "error";
-
-            statusMessage.textContent =
-                "✕ We couldn't send your invoice request. Please try again.";
-
-
-            invoiceButton.disabled =
-                false;
-
-            invoiceButton.textContent =
-                "Request an Invoice";
-
-        }
-
-    }
-);
-
-
-/* =========================
    START
 ========================= */
 
@@ -939,3 +912,4 @@ updateCartCount();
 </body>
 
 </html>
+
