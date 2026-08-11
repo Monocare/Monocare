@@ -623,7 +623,7 @@ button:active {
 <button type="submit">
     Request an Invoice
 </button>
-```
+
 
 </form>
 
@@ -872,6 +872,67 @@ else {
 
 updateCartCount();
 
+const invoiceForm = document.getElementById("invoice-form");
+
+invoiceForm.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+
+    const button = invoiceForm.querySelector("button[type='submit']");
+
+    button.disabled = true;
+    button.textContent = "Requesting Invoice...";
+
+    try {
+
+        const response = await fetch(invoiceForm.action, {
+            method: "POST",
+            body: new FormData(invoiceForm),
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (response.ok) {
+
+            // Clear the cart
+            localStorage.removeItem("cart");
+
+            // Update cart counter
+            const counter = document.getElementById("cart-count");
+
+            if (counter) {
+                counter.textContent = "0";
+            }
+
+            // Show success message
+            button.textContent = "Invoice Requested ✓";
+
+            alert("Your invoice request has been sent successfully.");
+
+            // Go back to the products page
+            window.location.href = "products.html";
+
+        } else {
+
+            button.disabled = false;
+            button.textContent = "Request an Invoice";
+
+            alert("There was a problem sending your invoice request. Please try again.");
+
+        }
+
+    } catch (error) {
+
+        button.disabled = false;
+        button.textContent = "Request an Invoice";
+
+        alert("There was a problem connecting to the server. Please try again.");
+
+    }
+
+});
+    
 </script>
 
 </body>
