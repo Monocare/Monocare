@@ -504,133 +504,29 @@ button:disabled {
 
 <form id="invoice-form">
 
-```
-<div class="customer-details">
+<form action="https://formsubmit.co/monocare50@gmail.com" method="POST">
 
-    <h2>
-        Customer Details
-    </h2>
+    <input type="hidden" name="_subject" value="Mono Safety TEST">
 
+    <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+    >
 
-    <div class="form-group">
+    <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+    >
 
-        <label for="customer-name">
-            Name
-        </label>
+    <button type="submit">
+        SEND TEST
+    </button>
 
-        <input
-            type="text"
-            id="customer-name"
-            name="Customer Name"
-            placeholder="Your name"
-            required
-        >
-
-    </div>
-
-
-    <div class="form-group">
-
-        <label for="customer-email">
-            Email
-        </label>
-
-        <input
-            type="email"
-            id="customer-email"
-            name="email"
-            placeholder="Your email address"
-            required
-        >
-
-    </div>
-
-
-    <div class="form-group">
-
-        <label for="customer-phone">
-            Phone
-        </label>
-
-        <input
-            type="tel"
-            id="customer-phone"
-            name="Customer Phone"
-            placeholder="Your phone number"
-            required
-        >
-
-    </div>
-
-
-    <div class="form-group">
-
-        <label for="company">
-            Company
-        </label>
-
-        <input
-            type="text"
-            id="company"
-            name="Company"
-            placeholder="Company name (optional)"
-        >
-
-    </div>
-
-
-    <div class="form-group">
-
-        <label for="address">
-            Delivery / Billing Address
-        </label>
-
-        <textarea
-            id="address"
-            name="Address"
-            placeholder="Enter your address"
-            required
-        ></textarea>
-
-    </div>
-
-</div>
-
-
-<!-- HIDDEN ORDER INFORMATION -->
-
-<input
-    type="hidden"
-    id="order-details"
-    name="Order Details"
->
-
-<input
-    type="hidden"
-    id="order-subtotal"
-    name="Subtotal"
->
-
-<input
-    type="hidden"
-    id="order-vat"
-    name="VAT 23%"
->
-
-<input
-    type="hidden"
-    id="order-total"
-    name="Total"
->
-
-
-<button
-    type="submit"
-    id="invoice-button"
->
-    Request an Invoice
-</button>
-
+</form>
 
 <div id="form-status"></div>
 ```
