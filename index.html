@@ -598,5 +598,25 @@ Your trusted supplier of PPE, workplace safety equipment and hygiene products ac
 
 </footer>
 
+<script>
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let count = 0;
+
+    cart.forEach(item => {
+        count += Number(item.qty) || 1;
+    });
+
+    const cartCount = document.getElementById("cart-count");
+
+    if (cartCount) {
+        cartCount.textContent = count;
+    }
+}
+
+updateCartCount();
+</script>
+    
 </body>
 </html>
