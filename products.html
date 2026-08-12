@@ -247,67 +247,79 @@ footer a{
 
 }
 
-@media(max-width:700px){
+@media(max-width:768px){
 
-.nav-links{
-    display:none;
-}
+    nav{
+        height:auto;
+        padding:15px 0;
+    }
 
-.hero h1{
-    font-size:40px;
-}
+    nav .container{
+        flex-direction:column;
+        gap:15px;
+    }
 
-.products,
-.features{
-    grid-template-columns:1fr;
-}
+    .logo{
+        height:70px;
+    }
 
-}
+    .logo img{
+        height:65px;
+    }
 
-.view-all-section{
-    padding:20px 0 70px;
-}
+    nav ul{
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+        width:100%;
+    }
 
-.view-all-box{
-    max-width:600px;
-    margin:0 auto;
-    background:white;
-    padding:40px;
-    border-radius:18px;
-    text-align:center;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+    nav ul li a{
+        font-size:14px;
+    }
 
-.view-all-box h2{
-    font-family:Poppins;
-    font-size:32px;
-    margin-bottom:15px;
-    color:#1F2937;
-}
+    .hero{
+        padding:300px 0 70px;
+        background-position:center;
+    }
 
-.view-all-box p{
-    color:#555;
-    font-size:17px;
-    margin-bottom:30px;
-}
+    .hero-content{
+        max-width:100%;
+        text-align:center;
+    }
 
-.view-all-btn{
-    display:inline-block;
-    background:#0057B8;
-    color:white;
-    text-decoration:none;
-    padding:15px 40px;
-    border-radius:10px;
-    font-size:17px;
-    font-weight:600;
-    transition:.3s;
-}
+    .hero h1{
+        font-size:38px;
+        line-height:1.15;
+        margin-bottom:20px;
+    }
 
-.view-all-btn:hover{
-    background:#003F87;
-    transform:translateY(-3px);
-}
+    .hero p{
+        font-size:17px;
+        margin-bottom:25px;
+    }
 
+    .buttons{
+        flex-direction:column;
+        gap:12px;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:300px;
+        text-align:center;
+    }
+
+    .title{
+        font-size:32px;
+    }
+
+    .hero-content{
+        text-align:center;
+        margin:0 auto;
+    }
 </style>
 
 </head>
