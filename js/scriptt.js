@@ -25,7 +25,7 @@ function addToCart(name, price, image) {
     saveCart();
     updateCartCount();
 
-    alert(name + " added to cart!");
+
 }
 
 
@@ -54,7 +54,7 @@ function addProduct(name, price, image, qtyId) {
     saveCart();
     updateCartCount();
 
-    alert(quantity + " x " + name + " added to cart!");
+
 }
 
 
