@@ -211,51 +211,46 @@ background:#003F87;
 
     nav .container{
         flex-direction:column;
-        gap:15px;
+        gap:12px;
     }
 
     .logo{
         height:70px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
     }
 
     .logo img{
         height:65px;
+        width:auto;
     }
 
-    nav ul{
+    .nav-links{
         display:flex;
-        gap:15px;
-        flex-wrap:wrap;
+        flex-direction:row;
+        flex-wrap:nowrap;
+        gap:10px;
         justify-content:center;
+        align-items:center;
         width:100%;
+        list-style:none;
+        margin:0;
+        padding:0;
     }
 
-    nav ul li a{
-        font-size:14px;
+    .nav-links li{
+        display:flex;
+        align-items:center;
+        flex-shrink:0;
     }
 
-    .about-grid{
-        grid-template-columns:1fr;
+    .nav-links a{
+        font-size:13px;
+        white-space:nowrap;
     }
 
-    .values,
-    .industries,
-    .footer{
-        grid-template-columns:1fr;
-    }
-
-    .page-header{
-        padding:60px 0;
-    }
-
-    .page-header h1{
-        font-size:38px;
-    }
-
-    .title{
-        font-size:32px;
-    }
-
+}
 </style>
 
 </head>
