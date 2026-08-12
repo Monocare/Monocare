@@ -8,345 +8,430 @@
 
 <title>About | Mono Safety</title>
 
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 
-
 <style>
 
+/* =========================
+   RESET
+========================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
 
 body{
-font-family:Inter,sans-serif;
-background:#F4F7FA;
-color:#1F2937;
-line-height:1.6;
+    font-family:Inter,sans-serif;
+    background:#F4F7FA;
+    color:#1F2937;
+    line-height:1.6;
 }
-
 
 .container{
-width:min(1200px,90%);
-margin:auto;
+    width:min(1200px,90%);
+    margin:auto;
 }
 
 
-/* NAVBAR */
-
+/* =========================
+   NAVBAR
+========================= */
 
 nav{
-
-background:white;
-height:90px;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 15px rgba(0,0,0,.05);
-
+    background:white;
+    padding:20px 0;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
 }
-
 
 nav .container{
-
-height:90px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
+.logo{
+    display:flex;
+    align-items:center;
+}
 
 .logo img{
-
-height:80px;
-width:auto;
-
+    height:60px;
+    width:auto;
 }
-
 
 .nav-links{
-
-display:flex;
-gap:35px;
-list-style:none;
-
+    display:flex;
+    gap:30px;
+    list-style:none;
+    align-items:center;
+    margin:0;
+    padding:0;
 }
-
 
 .nav-links a{
-
-text-decoration:none;
-color:#1F2937;
-font-weight:600;
-
+    text-decoration:none;
+    color:#1F2937;
+    font-weight:600;
+    white-space:nowrap;
+    transition:.2s;
 }
-
 
 .nav-links a:hover{
+    color:#0057B8;
+}
 
-color:#0057B8;
-
+.cart-link{
+    color:#0057B8 !important;
 }
 
 
-
-/* HEADER */
-
+/* =========================
+   PAGE HEADER
+========================= */
 
 .page-header{
-
-background:#0057B8;
-color:white;
-padding:80px 0;
-text-align:center;
-
+    background:#0057B8;
+    color:white;
+    padding:80px 0;
+    text-align:center;
 }
-
 
 .page-header h1{
-
-font-family:Poppins;
-font-size:48px;
-
+    font-family:Poppins,sans-serif;
+    font-size:48px;
+    line-height:1.2;
 }
-
 
 .page-header p{
-
-font-size:18px;
-margin-top:15px;
-
+    font-size:18px;
+    margin-top:15px;
 }
 
 
-
-/* ABOUT */
-
+/* =========================
+   SECTIONS
+========================= */
 
 section{
-
-padding:90px 0;
-
+    padding:90px 0;
 }
 
+
+/* =========================
+   ABOUT
+========================= */
 
 .about-grid{
-
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
-
 
 .about-box{
-
-background:white;
-padding:40px;
-border-radius:16px;
-box-shadow:0 10px 25px rgba(0,0,0,.06);
-
+    background:white;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
-
 
 .title{
-
-font-family:Poppins;
-font-size:38px;
-color:#0057B8;
-margin-bottom:20px;
-
+    font-family:Poppins,sans-serif;
+    font-size:38px;
+    color:#0057B8;
+    margin-bottom:20px;
 }
 
+.about-grid > div > p{
+    margin-bottom:20px;
+}
 
 .about-box p{
+    margin-bottom:20px;
+}
 
-margin-bottom:20px;
-
+.about-box p:last-child{
+    margin-bottom:0;
 }
 
 
-
-/* VALUES */
-
+/* =========================
+   VALUES
+========================= */
 
 .values{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
 }
-
 
 .value{
-
-background:white;
-padding:35px;
-text-align:center;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,.06);
-
+    background:white;
+    padding:35px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
-
 
 .value span{
-
-font-size:45px;
-display:block;
-margin-bottom:20px;
-
+    font-size:45px;
+    display:block;
+    margin-bottom:20px;
 }
-
 
 .value h3{
-
-font-family:Poppins;
-color:#0057B8;
-margin-bottom:15px;
-
+    font-family:Poppins,sans-serif;
+    color:#0057B8;
+    margin-bottom:15px;
 }
 
 
-
-/* INDUSTRIES */
-
+/* =========================
+   INDUSTRIES
+========================= */
 
 .industries{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
 }
-
 
 .industry{
-
-background:white;
-padding:30px;
-border-radius:15px;
-text-align:center;
-font-size:18px;
-font-weight:600;
-box-shadow:0 10px 25px rgba(0,0,0,.06);
-
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
 
-
-/* CTA */
-
+/* =========================
+   CTA
+========================= */
 
 .cta{
-
-background:#0057B8;
-color:white;
-text-align:center;
-
+    background:#0057B8;
+    color:white;
+    text-align:center;
 }
-
 
 .cta h2{
-
-font-family:Poppins;
-font-size:40px;
-margin-bottom:20px;
-
+    font-family:Poppins,sans-serif;
+    font-size:40px;
+    margin-bottom:20px;
 }
 
+.cta p{
+    margin-bottom:30px;
+}
 
 .btn{
+    display:inline-block;
+    background:white;
+    color:#0057B8;
+    padding:15px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.2s;
+}
 
-display:inline-block;
-background:white;
-color:#0057B8;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:600;
-
+.btn:hover{
+    transform:translateY(-2px);
 }
 
 
-
-/* FOOTER */
-
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-
-background:#1F2937;
-color:white;
-padding:60px 0;
-
+    background:#1F2937;
+    color:white;
+    padding:60px 0;
 }
-
 
 .footer{
-
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:40px;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
 }
-
 
 footer ul{
-
-list-style:none;
-
+    list-style:none;
 }
 
+footer li{
+    margin-bottom:8px;
+}
 
 footer a{
+    color:#ddd;
+    text-decoration:none;
+}
 
-color:#ddd;
-text-decoration:none;
-
+footer a:hover{
+    color:white;
 }
 
 
-
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:900px){
 
+    .about-grid{
+        grid-template-columns:1fr;
+    }
 
-.about-grid{
-
-grid-template-columns:1fr;
-
-}
-
-
-.values,
-.industries,
-.footer{
-
-grid-template-columns:1fr;
+    .values,
+    .industries,
+    .footer{
+        grid-template-columns:1fr;
+    }
 
 }
 
 
-.nav-links{
+/* =========================
+   MOBILE NAVBAR
+========================= */
 
-display:none;
+@media(max-width:768px){
+
+    nav{
+        padding:15px 0;
+        height:auto;
+    }
+
+    nav .container{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .logo{
+        width:100%;
+        justify-content:center;
+    }
+
+    .logo img{
+        height:65px;
+    }
+
+    .nav-links{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:10px 16px;
+    }
+
+    .nav-links a{
+        font-size:14px;
+    }
+
+    .page-header{
+        padding:55px 0;
+    }
+
+    .page-header h1{
+        font-size:38px;
+    }
+
+    .page-header p{
+        font-size:16px;
+    }
+
+    section{
+        padding:60px 0;
+    }
+
+    .title{
+        font-size:32px;
+    }
+
+    .about-box{
+        padding:30px;
+    }
+
+    .value{
+        padding:30px;
+    }
+
+    .industry{
+        padding:25px;
+    }
+
+    .cta h2{
+        font-size:32px;
+    }
 
 }
 
 
-}
+/* =========================
+   SMALL PHONES
+========================= */
 
+@media(max-width:480px){
+
+    .container{
+        width:92%;
+    }
+
+    .nav-links{
+        gap:8px 12px;
+    }
+
+    .nav-links a{
+        font-size:13px;
+    }
+
+    .logo img{
+        height:60px;
+    }
+
+    .page-header h1{
+        font-size:32px;
+    }
+
+    .page-header p{
+        font-size:15px;
+    }
+
+    .about-box{
+        padding:25px;
+    }
+
+    .title{
+        font-size:29px;
+    }
+
+    .cta h2{
+        font-size:29px;
+    }
+
+}
 
 </style>
-
 
 </head>
 
@@ -354,372 +439,376 @@ display:none;
 <body>
 
 
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <nav>
 
-
 <div class="container">
 
+    <div class="logo">
 
-<div class="logo">
+        <img
+            src="images/logo.png"
+            alt="Mono Safety Logo"
+        >
 
-<img src="images/logo.png" alt="Mono Safety Logo">
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="products.html">
+                Products
+            </a>
+        </li>
+
+        <li>
+            <a href="about.html">
+                About
+            </a>
+        </li>
+
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+        <li>
+            <a href="cart.html" class="cart-link">
+                🛒 Cart
+            </a>
+        </li>
+
+    </ul>
 
 </div>
-
-
-
-<ul class="nav-links">
-
-<li><a href="index.html">Home</a></li>
-
-<li><a href="products.html">Products</a></li>
-
-<li><a href="about.html">About</a></li>
-
-<li><a href="contact.html">Contact</a></li>
-
-<li><a href="cart.html">🛒 Cart</a></li>
-
-</ul>
-
-
-</div>
-
 
 </nav>
 
 
-
-
+<!-- =========================
+     PAGE HEADER
+========================= -->
 
 <section class="page-header">
 
-
 <div class="container">
 
+    <h1>
+        About Mono Safety
+    </h1>
 
-<h1>
-About Mono Safety
-</h1>
-
-
-<p>
-Providing reliable PPE and workplace safety supplies across Ireland.
-</p>
-
+    <p>
+        Providing reliable PPE and workplace safety supplies across Ireland.
+    </p>
 
 </div>
-
 
 </section>
 
 
-
-
-
-
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section>
-
 
 <div class="container about-grid">
 
 
-<div>
+    <div>
+
+        <h2 class="title">
+            Who We Are
+        </h2>
+
+        <p>
+            Mono Safety is a trusted supplier of personal protective equipment,
+            hygiene products and workplace safety solutions for businesses across Ireland.
+        </p>
+
+        <p>
+            We provide quality products designed to help organisations maintain
+            safe, clean and compliant working environments.
+        </p>
+
+        <p>
+            From disposable gloves and hygiene supplies to protective clothing
+            and workplace essentials, we help businesses get the equipment they
+            need quickly and efficiently.
+        </p>
+
+    </div>
 
 
-<h2 class="title">
-Who We Are
-</h2>
+    <div class="about-box">
 
+        <h2 class="title">
+            Our Mission
+        </h2>
 
-<p>
-Mono Safety is a trusted supplier of personal protective equipment, hygiene products and workplace safety solutions for businesses across Ireland.
-</p>
+        <p>
+            Our mission is simple: provide dependable safety products with
+            excellent service and competitive pricing.
+        </p>
 
+        <p>
+            We work with businesses of all sizes to deliver practical safety
+            solutions that protect employees and improve workplace standards.
+        </p>
 
-<p>
-We provide quality products designed to help organisations maintain safe, clean and compliant working environments.
-</p>
-
-
-<p>
-From disposable gloves and hygiene supplies to protective clothing and workplace essentials, we help businesses get the equipment they need quickly and efficiently.
-</p>
-
-
-</div>
-
-
-
-<div class="about-box">
-
-
-<h2 class="title">
-Our Mission
-</h2>
-
-
-<p>
-Our mission is simple: provide dependable safety products with excellent service and competitive pricing.
-</p>
-
-
-<p>
-We work with businesses of all sizes to deliver practical safety solutions that protect employees and improve workplace standards.
-</p>
-
-
-</div>
+    </div>
 
 
 </div>
-
 
 </section>
 
 
-
-
-
-
+<!-- =========================
+     VALUES
+========================= -->
 
 <section>
 
-
 <div class="container">
 
-
-<h2 class="title" style="text-align:center;">
-Our Values
-</h2>
-
-
-
-<div class="values">
+    <h2
+        class="title"
+        style="text-align:center;"
+    >
+        Our Values
+    </h2>
 
 
-<div class="value">
-
-<span>✔️</span>
-
-<h3>
-Quality
-</h3>
-
-<p>
-Supplying reliable products from trusted manufacturers.
-</p>
-
-</div>
+    <div class="values">
 
 
+        <div class="value">
+
+            <span>✔️</span>
+
+            <h3>
+                Quality
+            </h3>
+
+            <p>
+                Supplying reliable products from trusted manufacturers.
+            </p>
+
+        </div>
 
 
-<div class="value">
+        <div class="value">
 
-<span>🤝</span>
+            <span>🤝</span>
 
-<h3>
-Service
-</h3>
+            <h3>
+                Service
+            </h3>
 
-<p>
-Supporting customers with fast and friendly assistance.
-</p>
+            <p>
+                Supporting customers with fast and friendly assistance.
+            </p>
 
-</div>
-
-
+        </div>
 
 
-<div class="value">
+        <div class="value">
 
-<span>🚚</span>
+            <span>🚚</span>
 
-<h3>
-Reliability
-</h3>
+            <h3>
+                Reliability
+            </h3>
 
-<p>
-Helping businesses stay supplied when they need it most.
-</p>
+            <p>
+                Helping businesses stay supplied when they need it most.
+            </p>
 
-</div>
+        </div>
 
 
-</div>
-
+    </div>
 
 </div>
-
 
 </section>
 
 
-
-
-
-
-
+<!-- =========================
+     INDUSTRIES
+========================= -->
 
 <section>
 
-
 <div class="container">
 
-
-<h2 class="title" style="text-align:center;">
-Industries We Supply
-</h2>
-
-
-<div class="industries">
-
-
-<div class="industry">
-🏥 Healthcare
-</div>
+    <h2
+        class="title"
+        style="text-align:center;"
+    >
+        Industries We Supply
+    </h2>
 
 
-<div class="industry">
-🏗 Construction
-</div>
+    <div class="industries">
 
 
-<div class="industry">
-🏭 Manufacturing
-</div>
+        <div class="industry">
+            🏥 Healthcare
+        </div>
+
+        <div class="industry">
+            🏗 Construction
+        </div>
+
+        <div class="industry">
+            🏭 Manufacturing
+        </div>
+
+        <div class="industry">
+            🍽 Food Production
+        </div>
+
+        <div class="industry">
+            🏢 Offices
+        </div>
+
+        <div class="industry">
+            🚚 Logistics
+        </div>
 
 
-<div class="industry">
-🍽 Food Production
-</div>
-
-
-<div class="industry">
-🏢 Offices
-</div>
-
-
-<div class="industry">
-🚚 Logistics
-</div>
-
-
-</div>
-
+    </div>
 
 </div>
-
 
 </section>
 
 
-
-
-
-
+<!-- =========================
+     CTA
+========================= -->
 
 <section class="cta">
 
-
 <div class="container">
 
+    <h2>
+        Need Safety Supplies?
+    </h2>
 
-<h2>
-Need Safety Supplies?
-</h2>
+    <p>
+        Contact Mono Safety today for PPE solutions tailored to your business.
+    </p>
 
-
-<p>
-Contact Mono Safety today for PPE solutions tailored to your business.
-</p>
-
-
-<a href="contact.html" class="btn">
-Contact Us
-</a>
-
+    <a
+        href="contact.html"
+        class="btn"
+    >
+        Contact Us
+    </a>
 
 </div>
-
 
 </section>
 
 
-
-
-
-
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
-
 
 <div class="container footer">
 
 
-<div>
+    <div>
 
-<h3>
-Mono Safety
-</h3>
+        <h3>
+            Mono Safety
+        </h3>
 
-<p>
-Your trusted supplier of PPE, workplace safety equipment and hygiene products across Ireland.
-</p>
+        <p>
+            Your trusted supplier of PPE, workplace safety equipment
+            and hygiene products across Ireland.
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Quick Links
+        </h3>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <div>
+
+        <h3>
+            Contact
+        </h3>
+
+        <p>
+            Ireland
+        </p>
+
+        <p>
+            monocare50@gmail.com
+        </p>
+
+        <p>
+            +353 086 4161815
+        </p>
+
+    </div>
+
 
 </div>
-
-
-
-<div>
-
-<h3>
-Quick Links
-</h3>
-
-
-<ul>
-
-<li><a href="index.html">Home</a></li>
-
-<li><a href="products.html">Products</a></li>
-
-<li><a href="about.html">About</a></li>
-
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-
-</div>
-
-
-
-<div>
-
-<h3>
-Contact
-</h3>
-
-
-<p>Ireland</p>
-
-<p>monocare50@gmail.com</p>
-
-<p>+353 086 4161815</p>
-
-
-</div>
-
-
-</div>
-
 
 </footer>
-
 
 
 </body>
