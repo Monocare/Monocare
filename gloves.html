@@ -202,50 +202,59 @@ background:#003F87;
 /* MOBILE */
 
 
-@media(max-width:900px){
+@media(max-width:768px){
 
+    nav{
+        height:auto;
+        padding:15px 0;
+    }
 
-.products{
+    nav .container{
+        flex-direction:column;
+        gap:15px;
+    }
 
-grid-template-columns:1fr;
+    .logo{
+        height:70px;
+    }
 
-}
+    .logo img{
+        height:65px;
+    }
 
+    nav ul{
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+        width:100%;
+    }
 
-.product{
+    nav ul li a{
+        font-size:14px;
+    }
 
-flex-direction:column;
-text-align:center;
+    .about-grid{
+        grid-template-columns:1fr;
+    }
 
-}
+    .values,
+    .industries,
+    .footer{
+        grid-template-columns:1fr;
+    }
 
+    .page-header{
+        padding:60px 0;
+    }
 
-.product img{
+    .page-header h1{
+        font-size:38px;
+    }
 
-width:180px;
-height:180px;
-
-}
-
-
-.product button{
-
-width:100%;
-
-}
-
-
-}
-
-.product{
-    cursor:pointer;
-    transition:.3s;
-}
-
-.product:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 25px rgba(0,0,0,.15);
-}
+    .title{
+        font-size:32px;
+    }
 
 </style>
 
