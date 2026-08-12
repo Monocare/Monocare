@@ -1,8 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,20 +15,10 @@
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html,
-body{
-    width:100%;
-    overflow-x:hidden;
 }
 
 body{
@@ -43,13 +33,10 @@ body{
     margin:auto;
 }
 
-
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR - SAME AS INDEX */
 
 nav{
-    background:white;
+    background:#fff;
     padding:20px 0;
     position:sticky;
     top:0;
@@ -59,38 +46,37 @@ nav{
 
 nav .container{
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 }
 
 .logo{
+    height:90px;
     display:flex;
     align-items:center;
 }
 
 .logo img{
-    height:60px;
+    height:80px;
     width:auto;
+    display:block;
+    object-fit:contain;
 }
 
-.nav-links{
+nav ul{
     display:flex;
-    gap:30px;
+    gap:35px;
     list-style:none;
-    align-items:center;
-    margin:0;
-    padding:0;
 }
 
-.nav-links a{
+nav a{
     text-decoration:none;
     color:#1F2937;
     font-weight:600;
-    white-space:nowrap;
-    transition:.2s;
+    transition:.3s;
 }
 
-.nav-links a:hover{
+nav a:hover{
     color:#0057B8;
 }
 
@@ -98,10 +84,7 @@ nav .container{
     color:#0057B8 !important;
 }
 
-
-/* =========================
-   PAGE HEADER
-========================= */
+/* PAGE HEADER */
 
 .page-header{
     background:#0057B8;
@@ -111,9 +94,8 @@ nav .container{
 }
 
 .page-header h1{
-    font-family:Poppins,sans-serif;
+    font-family:Poppins;
     font-size:48px;
-    line-height:1.2;
 }
 
 .page-header p{
@@ -121,19 +103,11 @@ nav .container{
     margin-top:15px;
 }
 
-
-/* =========================
-   SECTIONS
-========================= */
+/* ABOUT */
 
 section{
     padding:90px 0;
 }
-
-
-/* =========================
-   ABOUT
-========================= */
 
 .about-grid{
     display:grid;
@@ -150,13 +124,9 @@ section{
 }
 
 .title{
-    font-family:Poppins,sans-serif;
+    font-family:Poppins;
     font-size:38px;
     color:#0057B8;
-    margin-bottom:20px;
-}
-
-.about-grid > div > p{
     margin-bottom:20px;
 }
 
@@ -164,14 +134,7 @@ section{
     margin-bottom:20px;
 }
 
-.about-box p:last-child{
-    margin-bottom:0;
-}
-
-
-/* =========================
-   VALUES
-========================= */
+/* VALUES */
 
 .values{
     display:grid;
@@ -194,15 +157,12 @@ section{
 }
 
 .value h3{
-    font-family:Poppins,sans-serif;
+    font-family:Poppins;
     color:#0057B8;
     margin-bottom:15px;
 }
 
-
-/* =========================
-   INDUSTRIES
-========================= */
+/* INDUSTRIES */
 
 .industries{
     display:grid;
@@ -220,10 +180,7 @@ section{
     box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
-
-/* =========================
-   CTA
-========================= */
+/* CTA */
 
 .cta{
     background:#0057B8;
@@ -232,13 +189,14 @@ section{
 }
 
 .cta h2{
-    font-family:Poppins,sans-serif;
+    font-family:Poppins;
     font-size:40px;
     margin-bottom:20px;
 }
 
 .cta p{
-    margin-bottom:30px;
+    max-width:650px;
+    margin:0 auto 35px;
 }
 
 .btn{
@@ -249,17 +207,9 @@ section{
     border-radius:50px;
     text-decoration:none;
     font-weight:600;
-    transition:.2s;
 }
 
-.btn:hover{
-    transform:translateY(-2px);
-}
-
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     background:#1F2937;
@@ -269,8 +219,13 @@ footer{
 
 .footer{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:40px;
+}
+
+footer h3{
+    margin-bottom:20px;
+    font-family:Poppins;
 }
 
 footer ul{
@@ -278,24 +233,51 @@ footer ul{
 }
 
 footer li{
-    margin-bottom:8px;
+    margin-bottom:10px;
 }
 
 footer a{
-    color:#ddd;
     text-decoration:none;
+    color:#ddd;
 }
 
 footer a:hover{
     color:white;
 }
 
+/* MOBILE - EXACT SAME NAVBAR LAYOUT AS INDEX */
 
-/* =========================
-   TABLET
-========================= */
+@media(max-width:768px){
 
-@media(max-width:900px){
+    nav{
+        height:auto;
+        padding:15px 0;
+    }
+
+    nav .container{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .logo{
+        height:70px;
+    }
+
+    .logo img{
+        height:65px;
+    }
+
+    nav ul{
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+        width:100%;
+    }
+
+    nav ul li a{
+        font-size:14px;
+    }
 
     .about-grid{
         grid-template-columns:1fr;
@@ -307,126 +289,16 @@ footer a:hover{
         grid-template-columns:1fr;
     }
 
-}
-
-
-/* =========================
-   MOBILE NAVBAR
-========================= */
-
-@media(max-width:768px){
-
-    nav{
-        padding:15px 0;
-        height:auto;
-    }
-
-    nav .container{
-        flex-direction:column;
-        gap:15px;
-    }
-
-    .logo{
-        width:100%;
-        justify-content:center;
-    }
-
-    .logo img{
-        height:65px;
-    }
-
-    .nav-links{
-        width:100%;
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        flex-wrap:wrap;
-        gap:10px 16px;
-    }
-
-    .nav-links a{
-        font-size:14px;
-    }
-
     .page-header{
-        padding:55px 0;
+        padding:60px 0;
     }
 
     .page-header h1{
         font-size:38px;
     }
 
-    .page-header p{
-        font-size:16px;
-    }
-
-    section{
-        padding:60px 0;
-    }
-
     .title{
         font-size:32px;
-    }
-
-    .about-box{
-        padding:30px;
-    }
-
-    .value{
-        padding:30px;
-    }
-
-    .industry{
-        padding:25px;
-    }
-
-    .cta h2{
-        font-size:32px;
-    }
-
-}
-
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media(max-width:480px){
-
-    .container{
-        width:92%;
-    }
-
-    .nav-links{
-        gap:8px 12px;
-    }
-
-    .nav-links a{
-        font-size:13px;
-    }
-
-    .logo img{
-        height:60px;
-    }
-
-    .page-header h1{
-        font-size:32px;
-    }
-
-    .page-header p{
-        font-size:15px;
-    }
-
-    .about-box{
-        padding:25px;
-    }
-
-    .title{
-        font-size:29px;
-    }
-
-    .cta h2{
-        font-size:29px;
     }
 
 }
@@ -435,382 +307,281 @@ footer a:hover{
 
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     NAVBAR
-========================= -->
 
 <nav>
 
 <div class="container">
 
-    <div class="logo">
+<div class="logo">
+<img src="images/logo.png" alt="Mono Safety Logo">
+</div>
 
-        <img
-            src="images/logo.png"
-            alt="Mono Safety Logo"
-        >
+<ul class="nav-links">
 
-    </div>
+<li>
+<a href="index.html">Home</a>
+</li>
 
+<li>
+<a href="products.html">Products</a>
+</li>
 
-    <ul class="nav-links">
+<li>
+<a href="about.html">About</a>
+</li>
 
-        <li>
-            <a href="index.html">
-                Home
-            </a>
-        </li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
 
-        <li>
-            <a href="products.html">
-                Products
-            </a>
-        </li>
+<li>
+<a href="cart.html" class="cart-link">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
+</li>
 
-        <li>
-            <a href="about.html">
-                About
-            </a>
-        </li>
-
-        <li>
-            <a href="contact.html">
-                Contact
-            </a>
-        </li>
-
-        <li>
-            <a href="cart.html" class="cart-link">
-                🛒 Cart
-            </a>
-        </li>
-
-    </ul>
+</ul>
 
 </div>
 
 </nav>
 
-
-<!-- =========================
-     PAGE HEADER
-========================= -->
-
 <section class="page-header">
 
 <div class="container">
 
-    <h1>
-        About Mono Safety
-    </h1>
+<h1>About Mono Safety</h1>
 
-    <p>
-        Providing reliable PPE and workplace safety supplies across Ireland.
-    </p>
+<p>
+Providing reliable PPE and workplace safety supplies across Ireland.
+</p>
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
 
 <section>
 
 <div class="container about-grid">
 
+<div>
 
-    <div>
+<h2 class="title">Who We Are</h2>
 
-        <h2 class="title">
-            Who We Are
-        </h2>
+<p>
+Mono Safety is a trusted supplier of personal protective equipment, hygiene products and workplace safety solutions for businesses across Ireland.
+</p>
 
-        <p>
-            Mono Safety is a trusted supplier of personal protective equipment,
-            hygiene products and workplace safety solutions for businesses across Ireland.
-        </p>
+<p>
+We provide quality products designed to help organisations maintain safe, clean and compliant working environments.
+</p>
 
-        <p>
-            We provide quality products designed to help organisations maintain
-            safe, clean and compliant working environments.
-        </p>
+<p>
+From disposable gloves and hygiene supplies to protective clothing and workplace essentials, we help businesses get the equipment they need quickly and efficiently.
+</p>
 
-        <p>
-            From disposable gloves and hygiene supplies to protective clothing
-            and workplace essentials, we help businesses get the equipment they
-            need quickly and efficiently.
-        </p>
+</div>
 
-    </div>
+<div class="about-box">
 
+<h2 class="title">Our Mission</h2>
 
-    <div class="about-box">
+<p>
+Our mission is simple: provide dependable safety products with excellent service and competitive pricing.
+</p>
 
-        <h2 class="title">
-            Our Mission
-        </h2>
+<p>
+We work with businesses of all sizes to deliver practical safety solutions that protect employees and improve workplace standards.
+</p>
 
-        <p>
-            Our mission is simple: provide dependable safety products with
-            excellent service and competitive pricing.
-        </p>
-
-        <p>
-            We work with businesses of all sizes to deliver practical safety
-            solutions that protect employees and improve workplace standards.
-        </p>
-
-    </div>
-
+</div>
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     VALUES
-========================= -->
 
 <section>
 
 <div class="container">
 
-    <h2
-        class="title"
-        style="text-align:center;"
-    >
-        Our Values
-    </h2>
+<h2 class="title" style="text-align:center;">
+Our Values
+</h2>
 
+<div class="values">
 
-    <div class="values">
+<div class="value">
 
+<span>✔️</span>
 
-        <div class="value">
+<h3>Quality</h3>
 
-            <span>✔️</span>
+<p>
+Supplying reliable products from trusted manufacturers.
+</p>
 
-            <h3>
-                Quality
-            </h3>
+</div>
 
-            <p>
-                Supplying reliable products from trusted manufacturers.
-            </p>
+<div class="value">
 
-        </div>
+<span>🤝</span>
 
+<h3>Service</h3>
 
-        <div class="value">
+<p>
+Supporting customers with fast and friendly assistance.
+</p>
 
-            <span>🤝</span>
+</div>
 
-            <h3>
-                Service
-            </h3>
+<div class="value">
 
-            <p>
-                Supporting customers with fast and friendly assistance.
-            </p>
+<span>🚚</span>
 
-        </div>
+<h3>Reliability</h3>
 
+<p>
+Helping businesses stay supplied when they need it most.
+</p>
 
-        <div class="value">
+</div>
 
-            <span>🚚</span>
-
-            <h3>
-                Reliability
-            </h3>
-
-            <p>
-                Helping businesses stay supplied when they need it most.
-            </p>
-
-        </div>
-
-
-    </div>
+</div>
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     INDUSTRIES
-========================= -->
 
 <section>
 
 <div class="container">
 
-    <h2
-        class="title"
-        style="text-align:center;"
-    >
-        Industries We Supply
-    </h2>
+<h2 class="title" style="text-align:center;">
+Industries We Supply
+</h2>
 
+<div class="industries">
 
-    <div class="industries">
+<div class="industry">
+🏥 Healthcare
+</div>
 
+<div class="industry">
+🏗 Construction
+</div>
 
-        <div class="industry">
-            🏥 Healthcare
-        </div>
+<div class="industry">
+🏭 Manufacturing
+</div>
 
-        <div class="industry">
-            🏗 Construction
-        </div>
+<div class="industry">
+🍽 Food Production
+</div>
 
-        <div class="industry">
-            🏭 Manufacturing
-        </div>
+<div class="industry">
+🏢 Offices
+</div>
 
-        <div class="industry">
-            🍽 Food Production
-        </div>
+<div class="industry">
+🚚 Logistics
+</div>
 
-        <div class="industry">
-            🏢 Offices
-        </div>
-
-        <div class="industry">
-            🚚 Logistics
-        </div>
-
-
-    </div>
+</div>
 
 </div>
 
 </section>
-
-
-<!-- =========================
-     CTA
-========================= -->
 
 <section class="cta">
 
 <div class="container">
 
-    <h2>
-        Need Safety Supplies?
-    </h2>
+<h2>Need Safety Supplies?</h2>
 
-    <p>
-        Contact Mono Safety today for PPE solutions tailored to your business.
-    </p>
+<p>
+Contact Mono Safety today for PPE solutions tailored to your business.
+</p>
 
-    <a
-        href="contact.html"
-        class="btn"
-    >
-        Contact Us
-    </a>
+<a href="contact.html" class="btn">
+Contact Us
+</a>
 
 </div>
 
 </section>
 
-
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
 <div class="container footer">
 
+<div>
 
-    <div>
+<h3>Mono Safety</h3>
 
-        <h3>
-            Mono Safety
-        </h3>
+<p>
+Your trusted supplier of PPE, workplace safety equipment and hygiene products across Ireland.
+</p>
 
-        <p>
-            Your trusted supplier of PPE, workplace safety equipment
-            and hygiene products across Ireland.
-        </p>
+</div>
 
-    </div>
+<div>
 
+<h3>Quick Links</h3>
 
-    <div>
+<ul>
 
-        <h3>
-            Quick Links
-        </h3>
+<li><a href="index.html">Home</a></li>
 
-        <ul>
+<li><a href="products.html">Products</a></li>
 
-            <li>
-                <a href="index.html">
-                    Home
-                </a>
-            </li>
+<li><a href="about.html">About</a></li>
 
-            <li>
-                <a href="products.html">
-                    Products
-                </a>
-            </li>
+<li><a href="contact.html">Contact</a></li>
 
-            <li>
-                <a href="about.html">
-                    About
-                </a>
-            </li>
+</ul>
 
-            <li>
-                <a href="contact.html">
-                    Contact
-                </a>
-            </li>
+</div>
 
-        </ul>
+<div>
 
-    </div>
+<h3>Contact</h3>
 
+<p>Ireland</p>
 
-    <div>
+<p>monocare50@gmail.com</p>
 
-        <h3>
-            Contact
-        </h3>
+<p>+353 086 4161815</p>
 
-        <p>
-            Ireland
-        </p>
-
-        <p>
-            monocare50@gmail.com
-        </p>
-
-        <p>
-            +353 086 4161815
-        </p>
-
-    </div>
-
+</div>
 
 </div>
 
 </footer>
 
+<script>
+
+function updateCartCount(){
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let count = 0;
+
+    cart.forEach(item => {
+        count += Number(item.qty) || 1;
+    });
+
+    const cartCount = document.getElementById("cart-count");
+
+    if(cartCount){
+        cartCount.textContent = count;
+    }
+
+}
+
+updateCartCount();
+
+</script>
 
 </body>
-
 </html>
