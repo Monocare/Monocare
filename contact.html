@@ -16,237 +16,266 @@
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Inter, sans-serif;
-    background: #F4F7FA;
-    color: #1F2937;
-    line-height: 1.6;
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
 }
 
-.container {
-    width: min(1200px, 90%);
-    margin: auto;
+body{
+    font-family:Inter,sans-serif;
+    background:#F4F7FA;
+    color:#1F2937;
+    line-height:1.6;
 }
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
 
 /* =========================
    NAVBAR
 ========================= */
 
-nav {
-    background: white;
-    height: 90px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 15px rgba(0,0,0,.05);
+nav{
+    background:white;
+    padding:20px 0;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 2px 15px rgba(0,0,0,.05);
 }
 
-nav .container {
-    height: 90px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+nav .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-.logo img {
-    height: 80px;
-    width: auto;
+.logo{
+    height:90px;
+    display:flex;
+    align-items:center;
 }
 
-.nav-links {
-    display: flex;
-    gap: 35px;
-    list-style: none;
+.logo img{
+    height:80px;
+    width:auto;
+    display:block;
+    object-fit:contain;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #1F2937;
-    font-weight: 600;
+.nav-links{
+    display:flex;
+    gap:35px;
+    list-style:none;
+    align-items:center;
 }
 
-.nav-links a:hover {
-    color: #0057B8;
+.nav-links a{
+    text-decoration:none;
+    color:#1F2937;
+    font-weight:600;
+    transition:.3s;
 }
+
+.nav-links a:hover{
+    color:#0057B8;
+}
+
+.cart-link{
+    color:#0057B8!important;
+}
+
 
 /* =========================
    PAGE HEADER
 ========================= */
 
-.page-header {
-    background: #0057B8;
-    color: white;
-    padding: 80px 0;
-    text-align: center;
+.page-header{
+    background:#0057B8;
+    color:white;
+    padding:80px 0;
+    text-align:center;
 }
 
-.page-header h1 {
-    font-family: Poppins, sans-serif;
-    font-size: 48px;
+.page-header h1{
+    font-family:Poppins,sans-serif;
+    font-size:48px;
 }
 
-.page-header p {
-    font-size: 18px;
-    margin-top: 15px;
+.page-header p{
+    font-size:18px;
+    margin-top:15px;
 }
+
 
 /* =========================
    CONTACT
 ========================= */
 
-.contact-section {
-    padding: 90px 0;
+.contact-section{
+    padding:90px 0;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 40px;
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.5fr;
+    gap:40px;
 }
+
 
 /* =========================
    CONTACT INFO
 ========================= */
 
-.contact-info {
-    background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+.contact-info{
+    background:white;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
-.contact-info h2 {
-    font-family: Poppins, sans-serif;
-    color: #0057B8;
-    margin-bottom: 25px;
+.contact-info h2{
+    font-family:Poppins,sans-serif;
+    color:#0057B8;
+    margin-bottom:25px;
 }
 
-.info-item {
-    margin-bottom: 25px;
+.info-item{
+    margin-bottom:25px;
 }
 
-.info-item h3 {
-    font-family: Poppins, sans-serif;
-    font-size: 18px;
-    color: #0057B8;
+.info-item h3{
+    font-family:Poppins,sans-serif;
+    font-size:18px;
+    color:#0057B8;
 }
+
 
 /* =========================
    FORM
 ========================= */
 
-.contact-form {
-    background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+.contact-form{
+    background:white;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
 }
 
-.contact-form h2 {
-    font-family: Poppins, sans-serif;
-    color: #0057B8;
-    margin-bottom: 25px;
+.contact-form h2{
+    font-family:Poppins,sans-serif;
+    color:#0057B8;
+    margin-bottom:25px;
 }
 
-.form-group {
-    margin-bottom: 20px;
+.form-group{
+    margin-bottom:20px;
 }
 
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
+.form-group label{
+    display:block;
+    font-weight:600;
+    margin-bottom:8px;
 }
 
 .form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-family: Inter, sans-serif;
-    font-size: 16px;
+.form-group textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-family:Inter,sans-serif;
+    font-size:16px;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: #0057B8;
+.form-group textarea:focus{
+    outline:none;
+    border-color:#0057B8;
 }
 
-.form-group textarea {
-    height: 140px;
-    resize: vertical;
+.form-group textarea{
+    height:140px;
+    resize:vertical;
 }
+
 
 /* =========================
    SUBMIT BUTTON
 ========================= */
 
-.submit-btn {
-    background: #0057B8;
-    color: white;
-    border: none;
-    padding: 16px 35px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 16px;
-    transition: .3s;
+.submit-btn{
+    background:#0057B8;
+    color:white;
+    border:none;
+    padding:16px 35px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    font-size:16px;
+    transition:.3s;
 }
 
-.submit-btn:hover {
-    background: #003F87;
-    transform: translateY(-2px);
+.submit-btn:hover{
+    background:#003F87;
+    transform:translateY(-2px);
 }
+
 
 /* =========================
    FOOTER
 ========================= */
 
-footer {
-    background: #1F2937;
-    color: white;
-    padding: 60px 0;
+footer{
+    background:#1F2937;
+    color:white;
+    padding:60px 0;
 }
 
-.footer {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+.footer{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:40px;
 }
 
-footer ul {
-    list-style: none;
+footer ul{
+    list-style:none;
 }
 
-footer a {
-    color: #ddd;
-    text-decoration: none;
+footer a{
+    color:#ddd;
+    text-decoration:none;
 }
 
-footer a:hover {
-    color: white;
+footer a:hover{
+    color:white;
 }
+
 
 /* =========================
    SUCCESS MESSAGE
 ========================= */
 
-.success-message {
-    display: none;
-    background: #e8f7ee;
-    color: #176b3a;
-    padding: 18px;
-    border-radius: 10px;
-    margin-bottom: 25px;
+.success-message{
+    display:none;
+    background:#e8f7ee;
+    color:#176b3a;
+    padding:18px;
+    border-radius:10px;
+    margin-bottom:25px;
 }
+
 
 /* =========================
    MOBILE
@@ -319,6 +348,21 @@ footer a:hover {
 
 }
 
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:400px){
+
+    .nav-links{
+        gap:10px;
+    }
+
+    .nav-links a{
+        font-size:13px;
+    }
+
 }
 
 </style>
@@ -360,11 +404,9 @@ footer a:hover {
 </li>
 
 <li>
-<li>
-    <a href="cart.html" class="cart-link">
-        🛒 Cart (<span id="cart-count">0</span>)
-    </a>
-</li>
+<a href="cart.html" class="cart-link">
+🛒 Cart (<span id="cart-count">0</span>)
+</a>
 </li>
 
 </ul>
@@ -463,14 +505,7 @@ Closed
 
 </div>
 
-<!-- =========================
-     CONTACT FORM
-========================= -->
-
-
-<!-- =========================
-     CONTACT FORM
-========================= -->
+<!-- CONTACT FORM -->
 
 <div class="contact-form">
 
@@ -481,19 +516,16 @@ Contact Us / Request A Quote
 <div id="successMessage" class="success-message">
 
 <strong>Thank you!</strong><br>
+
 Your enquiry has been sent successfully. We will get back to you as soon as possible.
 
 </div>
-
 
 <form
     id="contact-form"
     action="https://formspree.io/f/xoeawald"
     method="POST"
 >
-
-
-<!-- NAME -->
 
 <div class="form-group">
 
@@ -502,17 +534,15 @@ Name
 </label>
 
 <input
-    type="text"
-    id="name"
-    name="Name"
-    placeholder="Your name"
-    required
+type="text"
+id="name"
+name="Name"
+placeholder="Your name"
+required
+
 >
 
 </div>
-
-
-<!-- EMAIL -->
 
 <div class="form-group">
 
@@ -521,17 +551,15 @@ Email
 </label>
 
 <input
-    type="email"
-    id="email"
-    name="Email"
-    placeholder="Your email"
-    required
+type="email"
+id="email"
+name="Email"
+placeholder="Your email"
+required
+
 >
 
 </div>
-
-
-<!-- PHONE -->
 
 <div class="form-group">
 
@@ -540,17 +568,15 @@ Phone
 </label>
 
 <input
-    type="tel"
-    id="phone"
-    name="Phone"
-    placeholder="Your phone number"
-    required
+type="tel"
+id="phone"
+name="Phone"
+placeholder="Your phone number"
+required
+
 >
 
 </div>
-
-
-<!-- MESSAGE -->
 
 <div class="form-group">
 
@@ -567,25 +593,20 @@ Message
 
 </div>
 
-
-<!-- SUBMIT -->
-
 <button
-    class="submit-btn"
-    type="submit"
-    id="submitButton"
+class="submit-btn"
+type="submit"
+id="submitButton"
+
 >
 
 Send Enquiry
 
 </button>
 
-
 </form>
 
 </div>
-
-
 
 </div>
 
@@ -615,13 +636,21 @@ Your trusted supplier of PPE, workplace safety equipment and hygiene products ac
 
 <ul>
 
-<li><a href="index.html">Home</a></li>
+<li>
+<a href="index.html">Home</a>
+</li>
 
-<li><a href="Products.html">Products</a></li>
+<li>
+<a href="products.html">Products</a>
+</li>
 
-<li><a href="About.html">About</a></li>
+<li>
+<a href="about.html">About</a>
+</li>
 
-<li><a href="Contact.html">Contact</a></li>
+<li>
+<a href="contact.html">Contact</a>
+</li>
 
 </ul>
 
@@ -645,16 +674,52 @@ Your trusted supplier of PPE, workplace safety equipment and hygiene products ac
 
 <script>
 
-/* Show success message after returning from FormSubmit */
+/* =========================
+   CART COUNT
+========================= */
+
+function updateCartCount(){
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let count = 0;
+
+    cart.forEach(item => {
+
+        count += Number(item.qty) || 1;
+
+    });
+
+    const cartCount = document.getElementById("cart-count");
+
+    if(cartCount){
+
+        cartCount.textContent = count;
+
+    }
+
+}
+
+
+/* Update cart count when page loads */
+
+updateCartCount();
+
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
 
 const params = new URLSearchParams(window.location.search);
 
-if (params.get("success") === "true") {
+if(params.get("success") === "true"){
 
     const message = document.getElementById("successMessage");
 
-    if (message) {
+    if(message){
+
         message.style.display = "block";
+
     }
 
 }
@@ -664,4 +729,5 @@ if (params.get("success") === "true") {
 </body>
 
 </html>
+
 
